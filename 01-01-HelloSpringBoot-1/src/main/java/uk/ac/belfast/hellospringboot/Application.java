@@ -16,5 +16,6 @@ public class Application {
 		
 		
 		logger.info("hELLO SPIRNG BOOT");
+        logger.info(" Hey buddy");
 	}
 }
