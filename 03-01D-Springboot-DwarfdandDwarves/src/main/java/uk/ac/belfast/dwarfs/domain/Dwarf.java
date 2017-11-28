@@ -1,4 +1,4 @@
-
+package uk.ac.belfast.dwarfs.domain;
 
 public class Dwarf 
 {
