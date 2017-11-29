@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th= "http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav th:replace="layouts/nav :: navFragment"></nav>
+
+
+
+	<div class="jumbotron text-center">
+
+		<h1 style="color: blue;">Magic Land of Dwarves</h1>
+		<img src="dopey.jpg" height="450" width="789" />
+
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+
+
+			<div class="col-sm-6" style="text-align: center">
+				<h3>disney</h3>
+				<a href="/disney/" class="btn btn-info" role="button"> Disney</a>
+			</div>
+
+			<div class="col-sm-6" style="text-align: center">
+				<h3>tolkien</h3>
+
+				<a href="/Tolk/" class="btn btn-info" role="button">Tolkien</a>
+			</div>
+
+		</div>
+		 <footer th:replace="layouts/footer :: footerFragment"></footer>
+	</div>
+
+</body>
+
+</html>
