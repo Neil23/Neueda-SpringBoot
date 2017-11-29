@@ -10,28 +10,14 @@ package uk.ac.belfast.dwarfs.controller;
     import org.springframework.web.bind.annotation.RequestMapping;
     import org.springframework.web.bind.annotation.RestController;
 
-    @RestController
-    @RequestMapping("/disneyrocks")
+    @Controller
+    @RequestMapping("/")
     public class ControllerDemo {
-           
+          
            @GetMapping("/")
            public String disney (Model model) {
 
-           return "Hello World";            
+           return "Homepage";            
     }
-           
-           @GetMapping("/bingo")
-           public String bingo (Model model) {
-
-           return "There was a dog in our back yard..."; 
-           
-    }
-           
-           @GetMapping("/princess")
-           public String princess (Model model) {
-
-           return "Meghan Markle is a total babe"; 
-
-}
            
     }

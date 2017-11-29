@@ -1,37 +1,30 @@
 package uk.ac.belfast.dwarfs.controller;
 
+import java.util.ArrayList;
 
-	import org.springframework.stereotype.Controller;
-	import org.springframework.ui.Model;
-	import org.springframework.web.bind.annotation.GetMapping;
-	import org.springframework.web.bind.annotation.RequestMapping;
-	import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-	@RestController
-	@RequestMapping("/")
-	public class DisneyController {
-	       
-	       @GetMapping("/")
-	       public String disney (Model model) {
+import uk.ac.belfast.dwarfs.service.DwarfService;
 
-	       return "Hello World";            
-	}
-	       
-	       @GetMapping("/bingo")
-	       public String bingo (Model model) {
 
-	       return "There was a dog in our back yard..."; 
-	       
-	}
-	       
-	       @GetMapping("/princess")
-	       public String princess (Model model) {
 
-	       return "Meghan Markle";   
-	       
-	       }
-	       
+@Controller
+@RequestMapping("/")
+public class DisneyController {
 	
+	@Autowired
+	private DwarfService dwarfService;
+
+	@GetMapping("/disney")
+	public String disney(Model model) {
+		model.addAttribute("pageTitle", "Disney !");
+		this.dwarfService = new DwarfService();
+		model.addAttribute("dwarfs", this.dwarfService.getDisneyDwarfs());
+		return "disneypage";
+	}
+
 }
-
-
