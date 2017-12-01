@@ -2,89 +2,90 @@ package uk.ac.belfast.dwarfs.service;
 
 import java.util.ArrayList;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import uk.ac.belfast.dwarfs.domain.Dwarf;
+import uk.ac.belfast.dwarfs.reposiitories.DwarfRepository;
 
 @Service
-public class DwarfService {
-
-
+public class DataLoader {
+	
+@Autowired
+	private DwarfRepository dwarfRepository;
 	
 
-	public DwarfService() {
+	public DataLoader(DwarfRepository dwarfRepository) {
 		super();
+		this.dwarfRepository = dwarfRepository;
 	}
-	
-	public ArrayList<Dwarf> getDisneyDwarfs() {
+
+
+	public void loadData() {
 		
-		ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
+		
 
 		Dwarf happy = new Dwarf("Happy", "Disney", "Happy.png");
-
-		dwarfs.add(happy);
+        dwarfRepository.save(happy);
+        
 		Dwarf sleepy = new Dwarf("Sleepy", "Disney", "Sleepy.png");
-		dwarfs.add(sleepy);
+		dwarfRepository.save(sleepy);
+		
 		Dwarf dopey = new Dwarf("Dopey", "Disney", "Dopey.png");
-		dwarfs.add(dopey);
+		dwarfRepository.save(dopey);
+		
 		Dwarf bashful = new Dwarf("Bashful", "Disney", "Bashful.png");
-		dwarfs.add(bashful);
+	
+		
+		dwarfRepository.save(bashful);
+		
 		Dwarf sneezy = new Dwarf("Sneezy", "Disney", "Sneezy.png");
-		dwarfs.add(sneezy);
+		
+		dwarfRepository.save(sneezy);
 		Dwarf doc = new Dwarf("Doc", "Disney", "Doc.png");
-		dwarfs.add(doc);
+		dwarfRepository.save(doc);
+	
 		Dwarf grumpy = new Dwarf("Grumpy", "Disney", "Grumpy.png");
-		dwarfs.add(grumpy);
+		dwarfRepository.save(grumpy);
 
-		return dwarfs;
-	}
-
-
-
-	public ArrayList<Dwarf> getTolkienDwarves(){
-        ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
         Dwarf thorin = new Dwarf("Thorin", "Tolkien", "Thorin.png");
-        dwarfs.add(thorin);
+        dwarfRepository.save(thorin);
+        
         Dwarf balin = new Dwarf("Balin", "Tolkien", "Balin.png");
-        dwarfs.add(balin);
+        dwarfRepository.save(balin);
         Dwarf dwalin = new Dwarf("Dwalin", "Tolkien", "Dwalin.png");
-        dwarfs.add(dwalin);
+        dwarfRepository.save(dwalin);
         Dwarf fili = new Dwarf("Fíli", "Tolkien", "Fili.png");
-        dwarfs.add(fili);
+        dwarfRepository.save(fili);
         Dwarf kili = new Dwarf("Kíli", "Tolkien", "Kili.png");
-        dwarfs.add(kili);
+        dwarfRepository.save(kili);
+        
         Dwarf dori = new Dwarf("Dori", "Tolkien", "Dori.png");
-        dwarfs.add(dori);
+        dwarfRepository.save(dori);
         Dwarf nori = new Dwarf("Nori", "Tolkien", "Nori.png");
-        dwarfs.add(nori);
+       
+        dwarfRepository.save(nori);
         Dwarf ori = new Dwarf("Ori", "Tolkien", "Ori.png");
-        dwarfs.add(ori);
+        
+        dwarfRepository.save(ori);
         Dwarf oin = new Dwarf("Óin", "Tolkien", "Oin.png");
-        dwarfs.add(oin);
+        dwarfRepository.save(oin);
+        
+        
         Dwarf gloin = new Dwarf("Glóin", "Tolkien", "Gloin.png");
-        dwarfs.add(gloin);
+        dwarfRepository.save(gloin);
+        
         Dwarf bifur = new Dwarf("Bifur", "Tolkien", "Bifur.png");
-        dwarfs.add(bifur);
+        dwarfRepository.save(bifur);
         Dwarf bofur = new Dwarf("Bofur", "Tolkien", "Bofur.png");
-        dwarfs.add(bofur);
+        dwarfRepository.save(bofur);
+        
         Dwarf bombur = new Dwarf("Bombur", "Tolkien", "Bombur.png");
-        dwarfs.add(bombur);
-
-
-
+        dwarfRepository.save(bombur);
+		
+		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

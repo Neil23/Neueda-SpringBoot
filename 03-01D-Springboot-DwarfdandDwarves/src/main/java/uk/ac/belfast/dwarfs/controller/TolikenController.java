@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import uk.ac.belfast.dwarfs.domain.Dwarf;
 
 @Controller
-@RequestMapping("/toliken")
+@RequestMapping("/tolk")
 public class TolikenController {
 
 	@GetMapping("/")
