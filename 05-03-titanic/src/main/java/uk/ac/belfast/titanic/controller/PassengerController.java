@@ -35,4 +35,5 @@ public class PassengerController {
 		model.addAttribute("children", passengerRepository.findByAgeLessThan(18));
 		return "Children";            
 	}
+	
 }
