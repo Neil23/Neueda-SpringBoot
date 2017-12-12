@@ -13,11 +13,11 @@
 <title th:text="${pageTitle}">Generic title page</title>
 </head>
 <body>
-	
+
 	<div class="jumbotron text-center">
 
 
-		<h1>Cereal</h1>
+		<h1>Your chosen Cereal kiddo</h1>
 		<h2></h2>
 		<br />
 
@@ -39,10 +39,10 @@
 				<th>Sodium</th>
 				<th>Salt</th>
 				<th>Iron</th>
-				<th>Links</th>
+
 
 			</tr>
-			<tr th:each="cereal: ${cereallist}">
+			<tr>
 				<td th:text="${cereal.Manufacturer}"></td>
 				<td th:text="${cereal.name}"></td>
 				<td th:text="${cereal.Energy}"></td>
@@ -52,17 +52,13 @@
 				<td th:text="${cereal.Sugar}"></td>
 				<td th:text="${cereal.Fat}"></td>
 				<td th:text="${cereal.Saturates}"></td>
-				
 				<td th:text="${cereal.Fibre}"></td>
 				<td th:text="${cereal.Sodium}"></td>
 				<td th:text="${cereal.Salt}"></td>
 				<td th:text="${cereal.Iron}"></td>
-				<td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a> 
-				<a href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a> 
-				<a href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a> </td>
 			</tr>
 		</table>
-<a href="/cereal/add/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Add</a>
+
 	</div>
 
 </body>
