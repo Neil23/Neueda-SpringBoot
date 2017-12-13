@@ -20,22 +20,31 @@
 
 </div>
 <div class="container">
-  
+  <a href="/passenger/add/" class="btn btn-secondary btn-lg active"
+			role="button" aria-pressed="true">Add</a>
            <table class="table table-striped">
               <tr>
                      <th>Name</th>
                      <th>Age</th>
                      <th>Fare</th>
                      <th>Survived</th>
+                     <th>links</th>
               </tr>
               <tr th:each="passenger : ${passengers}">
                      <td th:text="${passenger.name}"></td>
                      <td th:text="${passenger.age}"></td>
                      <td th:text="${passenger.fare}"></td>
                      <td th:text="${passenger.survived}"></td>
-              </tr>
+                     
+                     <td><a class="btn btn-success" href="#"  th:href="@{passenger/view/} + ${passenger.passengerId}">View</a>
+					<a class="btn btn-success" href="#" th:href="@{passenger/edit/} + ${passenger.passengerId}">Edit</a>
+					<a class="btn btn-danger" href="#" th:href="@{passenger/delete/} + ${passenger.passengerId}">Delete</a>
+				</td>
+			</tr>
+             
        </table>
-    
+    <a href="/passenger/add/" class="btn btn-secondary btn-lg active"
+			role="button" aria-pressed="true">Add</a>
 </div>
  
 </body>
