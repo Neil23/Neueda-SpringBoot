@@ -52,7 +52,7 @@ public class HomeController {
 		return "ViewCereal";
 
 	}
-	@GetMapping("/cereal/edit/{cerealId)")
+	@GetMapping("/cereal/edit/{cerealId}")
 	
 	public String editCereal(@PathVariable ("cerealId")Integer cerealId, Model model) {
 		
