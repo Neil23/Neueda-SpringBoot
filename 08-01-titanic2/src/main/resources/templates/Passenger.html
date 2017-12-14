@@ -20,9 +20,13 @@
 
 </div>
 <div class="container">
+<input class="form-control" id="myInput" type="text" placeholder="Search.."></input>
   <a href="/passenger/add/" class="btn btn-secondary btn-lg active"
 			role="button" aria-pressed="true">Add</a>
            <table class="table table-striped">
+           
+           <tbody id="passengerTable">
+           
               <tr>
                      <th>Name</th>
                      <th>Age</th>
@@ -41,11 +45,22 @@
 					<a class="btn btn-danger" href="#" th:href="@{passenger/delete/} + ${passenger.passengerId}">Delete</a>
 				</td>
 			</tr>
-             
+             </tbody>
        </table>
     <a href="/passenger/add/" class="btn btn-secondary btn-lg active"
 			role="button" aria-pressed="true">Add</a>
 </div>
  
 </body>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#passengerTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 </html>

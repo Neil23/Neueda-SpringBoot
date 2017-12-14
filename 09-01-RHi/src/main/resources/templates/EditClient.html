@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+       src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+
+<body>
+      
+       <div class="jumbotron text-center">
+<nav th:replace="layouts/nav :: navFragment"></nav>
+              <h1 th:text="${title}">Create</h1>
+              <br />
+       </div>
+
+
+       <div class="container">
+
+              <form class="form-horizontal" th:action="@{/client/save}"
+                     th:object="${client}" method="post">
+                     
+                     
+            
+                   
+                          
+                   
+
+                     <table class="table table-striped">
+                           <thead>
+                                  <tr>
+                                         <th>Nutrition</th>
+                                         <th>Value</th>
+                                  </tr>
+                           </thead>
+                           <tbody>
+                                  <tr>
+                                         <td>Name</td>
+                                         <td><input type="text" class="form-control"
+                                                th:field="${client.name}" /></td>
+                                  </tr>
+                                  <tr>
+                                         <td>Date</td>
+                                         <td><input type="text" class="form-control"
+                                                th:field="${client.date}" /></td>
+                                  </tr>
+                                  <tr>
+                                         <td>Business</td>
+                                         <td><input type="text" class="form-control"
+                                                th:field="${client.Business}" /></td>
+                                  </tr>
+                                 <tr>
+                                         <td>TechnologyType</td>
+                                         <td><input type="text" class="form-control"
+                                                th:field="${client.TechnologyType}" /></td>
+                                  </tr>
+                                  <tr>
+                                         <td>Capacity</td>
+                                         <td><input type="text" class="form-control"
+                                                th:field="${client.Capacity}" /></td>
+                                  </tr>
+                                  <tr>
+                                         <td>Payment</td>
+                                         <td><input type="text" class="form-control"
+                                                th:field="${client.Payment}" /></td>
+                                  </tr>
+                                  
+                           </tbody>
+                     </table>
+                     <button type="submit" class="btn btn-primary">Save</button>
+              </form>
+       </div>
+</body>
+</html>

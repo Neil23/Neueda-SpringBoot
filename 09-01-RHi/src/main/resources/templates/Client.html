@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Generic title page</title>
+</head>
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+
+
+		<h1>Client</h1>
+		<h2></h2>
+		<br />
+
+		<div class="alert alert-success" role="alert" th:if="${message}">
+
+			<p th:text="${message}"></p>
+		</div>
+		<input class="form-control" id="myInput" type="text"
+			placeholder="Search.."></input>
+<table class="table table-striped">
+
+			<tbody id="myTable">
+
+				<tr>
+					<th>Name</th>
+					<th>Date</th>
+					
+					<th>TechnolologyType</th>
+					<th>Capacity</th>
+					<th>Payment</th>
+					<th>links</th>
+				</tr>
+				<tr th:each="client : ${clients}">
+					<td th:text="${client.name}"></td>
+					<td th:text="${client.date}"></td>
+					
+					<td th:text="${client.TechnologyType}"></td>
+					<td th:text="${client.Capacity}"></td>
+					<td th:text="${client.Payment}"></td>
+
+					<td><a class="btn btn-success" href="#"
+						th:href="@{client/view/} + ${client.clientId}">View</a> <a
+						class="btn btn-success" href="#"
+						th:href="@{client/edit/} + ${client.clientId}">Edit</a> <a
+						class="btn btn-danger" href="#"
+						th:href="@{client/delete/} + ${client.clientId}">Delete</a></td>
+				</tr>
+			</tbody>
+
+
+
+		</table>
+		<input class="form-control" id="myInput" type="text"
+			placeholder="Search.."></input> <a href="/client/add/"
+			class="btn btn-secondary btn-lg active" role="button"
+			aria-pressed="true">Add</a>
+	</div>
+
+</body>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</html>

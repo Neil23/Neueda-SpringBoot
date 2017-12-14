@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Generic title page</title>
+</head>
+<body>
+
+	<div class="jumbotron text-center">
+<nav th:replace="layouts/nav :: navFragment"></nav>
+
+		<h1>Client View</h1>
+		<h2></h2>
+		<br />
+
+	</div>
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+
+				<th>Name</th>
+				<th>Date</th>
+				<th>Postcode</th>
+				
+				
+				<th>TechnologyType</th>
+				<th>Capacity</th>
+				<th>Payment</th>
+
+			</tr>
+			<tr>
+				<td th:text="${client.name}"></td>
+				<td th:text="${client.date}"></td>
+				
+				<td th:text="${client.postcode}"></td>
+				<td th:text="${client.TechnologyType}"></td>
+				<td th:text="${client.Capacity}"></td>
+				<td th:text="${client.Payment}"></td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>
