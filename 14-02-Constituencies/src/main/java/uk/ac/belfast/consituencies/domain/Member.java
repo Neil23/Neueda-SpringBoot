@@ -29,16 +29,20 @@ public class Member {
 	@JsonProperty("MemberSortName")
 	private String memberSortName;
 	
-	@JsonProperty("Party")
-	private String party;
+	@JsonProperty("PartyName")
+	private String partyName;
 	
 	@JsonProperty("PartyOrganisationId")
 	private String partyOrganisationId;
-	@JsonProperty("constituencyName")
+	
+	@JsonProperty("ConstituencyName")
 	private String constituencyName;
 	
-	//@JsonProperty("constituencyId")
-	//private String constituencyId;
+	@JsonProperty("ConstituencyId")
+	private String constituencyId;
+	
+	@JsonProperty("MemberImgUrl")
+	private String image;
 	
 
 

@@ -29,14 +29,14 @@ public class Event {
 		
 	}
 
-	public Event(String identifier, String url, String title, Date startDate, Date finishDate, String time,
+	public Event(String identifier, String url, String title, Date startDate, Date endDate, String time,
 			String venue, String venueUrl, String image, String audience, String theme, String cost, String content) {
 		super();
 		this.identifier = identifier;
 		this.url = url;
 		this.title = title;
 		this.startDate = startDate;
-		this.endDate = finishDate;
+		this.endDate = endDate;
 		this.time = time;
 		this.venue = venue;
 		this.venueUrl = venueUrl;
